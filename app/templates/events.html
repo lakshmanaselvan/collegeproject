@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<table class="table table-striped-columns">
+    <thead>
+      <tr class="table-dark">
+        <th scope="col">Id</th>
+        <th scope="col">Event Name</th>
+        <th scope="col">Venue</th>
+        <th scope="col">Organizer</th>
+      </tr>
+    </thead>
+    {% for event in events %}
+        <tbody>
+        <tr>
+            <th scope="row" class="table-dark">{{ forloop.counter }}</th>
+            <td class="table-dark">{{ event.title }}</td>
+            <td class="table-dark">{{ event.venue|capfirst }}</td>
+            <td class="table-dark">{{ event.organizer|capfirst }}</td>
+        </tr>
+        </tbody>
+    {% endfor %}
+  </table>
+  
+{% endblock %}
